@@ -3,6 +3,8 @@ Auto VPN is an open-source solution designed to eliminate reliance on expensive 
 
 Global Deployment: Spin up a VPN server in any geographic region supported by your chosen cloud provider, giving you complete control over location and latency.
 
+DNS Filtering: Built-in DNS filtering on the server blocks ads, trackers, and malicious domains to enhance privacy and security.
+
 Cost-Effective: Operates at approximately $0.0052/hour, or $0.31/month for 15 hours of usage per week.
 
 <img width="242" alt="vpncosts" src="https://github.com/user-attachments/assets/5b3de0e6-48ea-4c89-b9f3-0e5c69640b2c" />
@@ -10,6 +12,11 @@ Cost-Effective: Operates at approximately $0.0052/hour, or $0.31/month for 15 ho
 Usage-Based Billing: Pay only for the time you actively use the VPN.
 
 Performance: Optimized for a 25 Mbps connection—sufficient for 4K video streaming.
+
+# Demo
+This video demonstrates a new VPN server being created, DNS filtering to perform AD blocking.
+
+https://youtu.be/zxo3843Qp0E
 
 # Components
 There are two main components of this project: the VPN client and the VPN server.
