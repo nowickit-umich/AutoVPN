@@ -43,3 +43,5 @@ Log into AWS
 Do not put the keys in a public spot or in code, as other people who have access to the key can use it to create servers
 
 
+
+Initially developed as a university software engineering project: https://github.com/nowickit-umich/CIS375GroupProject
