@@ -1,0 +1,32 @@
+Dev/Testing Server setup:
+
+1. Create AWS EC2 instance
+    - Ubuntu 24.04 (ami-0ea3c35c5c3284d82)
+    - Type: t3.nano
+    - Security Group: Allow UDP 500 and UDP 4500 from any ipv4/ipv6
+
+2. Use ssh to connect to server
+    - (client)$> ssh -i <keyfile> ubuntu@<serverIP>
+
+3. Clone github repo
+    - (server)$> git clone https://github.com/nowickit-umich/CIS375GroupProject.git
+
+4. Run setup script
+    - (server)$> sudo chmod +x CIS375GroupProject/server/setup.sh
+    - (server)$> sudo ./CIS375GroupProject/server/setup.sh
+
+NOTES:
+IP address is listed in instance summary. This IP address will change if the server is stopped or restarted.
+If the IP address changes, the setup script must be run again.
+
+VPN client settings:
+IKEv2
+Username: user
+Password: can be found in /etc/swanctl/swanctl.conf
+The server certificate can be found on the server in /etc/swanctl/x509/cert.pem
+Certificate should be installed as a trusted root certificate
+
+Get cert with scp:
+    - (client)$> scp -i <keyfile> ubuntu@<serverIP>:/etc/swanctl/x509/cert.pem cert.pem
+
+

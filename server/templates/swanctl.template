@@ -1,0 +1,48 @@
+mycert {
+        #CA cert to provide to clients
+        cacert=/etc/x509/cert.pem
+}
+
+connections {
+        cis375vpn {
+                version=2
+                local_addrs=%any
+                remote_addrs=%any
+                #TODO find better props
+                proposals=aes256-prfsha256-sha256-modp1024-modp2048
+                encap=yes
+                dpd_delay=10
+                pools=virt
+                #Needed for Android
+                send_cert=always
+                local {
+                        auth=pubkey
+                        certs=cert.pem
+                        id=%IP%
+                }
+                remote {
+                        auth=eap-dynamic
+                        id=%any
+                        eap_id=%any
+                }
+                children {
+                        eap {
+                                local_ts=0.0.0.0/0
+                        }
+                }
+        }
+}
+
+pools {
+        virt {
+                addrs=%CLIENT_NET%
+                dns=%LOCAL_ADDR%
+	}
+}
+
+secrets {
+        eap-user {
+                id=user
+                secret=%PW%
+        }
+}
