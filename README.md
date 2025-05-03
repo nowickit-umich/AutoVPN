@@ -38,8 +38,8 @@ Creating Access/Secret Key
 Log into AWS
 1. Go to IAM (Identity and Access Management) Dashboard
 2. Go to users tab on the left side of the screen, found between User Groups and Roles options under Access Management
-3. Create a new user, giving it a name and allowing access to AWS management console (not required)
-4. Set the permissions as "Attach Polcicies Directly", giving it one policy of AmazonEC2FullAccess, ignore permission boundaries
+3. Create a new user
+4. Set the permissions as "Attach Policies Directly", giving it one policy of AmazonEC2FullAccess, ignore permission boundaries. (More limited policies can be used if greater security is desired)
 5. Review and create the user
 6. Click on the user and press create access key on the right side of the summary box
 7. For Access key best practices & alternatives, select "Application running outside AWS"
@@ -50,5 +50,5 @@ Log into AWS
 Do not put the keys in a public spot or in code, as other people who have access to the key can use it to create servers
 
 
-
+NOTE: 
 Initially developed as a university software engineering project: https://github.com/nowickit-umich/CIS375GroupProject
